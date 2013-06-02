@@ -1,10 +1,12 @@
 .filter
-  %p Filter stories:
-  = form_tag do
+  %p
+    Filter stories:
     = select_tag(:bias_category, options_for_bias_category)
     = select_tag(:bias, options_for_bias)
     = select_tag(:offense_category, options_for_offense_category)
     = select_tag(:offense, options_for_offense)
+    = link_to "Filter Results", root_path
+
 
 %h1
   = @story.title
@@ -12,6 +14,14 @@
 %ul
   - @story.victim_list.each do |v|
     %li
-      =v
+      = v
 = @story.description
-= link_to @story.link
+
+%p
+  = link_to @story.link
+
+%p
+  = link_to "See another story", root_path
+
+%P
+  = link_to "Add your own story", new_story_path
