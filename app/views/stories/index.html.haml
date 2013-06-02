@@ -1,0 +1,17 @@
+.filter
+  %p Filter stories:
+  = form_tag do
+    = select_tag(:bias_category, options_for_bias_category)
+    = select_tag(:bias, options_for_bias)
+    = select_tag(:offense_category, options_for_offense_category)
+    = select_tag(:offense, options_for_offense)
+
+%h1
+  = @story.title
+= time_tag @story.occurred_at,format: "%B %d, %Y"
+%ul
+  - @story.victim_list.each do |v|
+    %li
+      =v
+= @story.description
+= link_to @story.link
