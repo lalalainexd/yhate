@@ -23,4 +23,9 @@ module ApplicationHelper
     options = categories.collect{|c|[c["name"], c["name"]]}
     options_for_select(options)
   end
+
+  def filters
+    {bias: params[:bias],offense: params[:offense]}
+  end
+
 end
