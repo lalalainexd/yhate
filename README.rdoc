@@ -4,5 +4,8 @@ To try it, clone the repo, `bundle`,`rake db:migrate`, and run with unicorn. You
 
 It uses the hatolence gem which is a wrapper for the hate-crimes api.
 
+Related Projects
+
 https://github.com/lalalainexd/hatolence
+
 https://github.com/lalalainexd/hate_crimes
