@@ -1,8 +1,8 @@
 This app aggregates user stories with hate crimes.
 
-To try it, clone the repo, `bundle`,`rake db:migrate`, and run with unicorn. You can also see it live at [http://yhate.herokuapp.com]
+To try it, clone the repo, `bundle`,`rake db:migrate`, and run with unicorn. You can also see it live at http://yhate.herokuapp.com
 
 It uses the hatolence gem which is a wrapper for the hate-crimes api.
 
-[https://github.com/lalalainexd/hatolence]
-[https://github.com/lalalainexd/hate_crimes]
+https://github.com/lalalainexd/hatolence
+https://github.com/lalalainexd/hate_crimes
