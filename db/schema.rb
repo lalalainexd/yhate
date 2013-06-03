@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130602203742) do
+ActiveRecord::Schema.define(:version => 20130602231121) do
 
   create_table "stories", :force => true do |t|
     t.datetime "created_at",  :null => false
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(:version => 20130602203742) do
     t.string   "link"
     t.string   "title"
     t.string   "bias"
+    t.string   "offense"
   end
 
 end

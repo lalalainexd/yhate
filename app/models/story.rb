@@ -1,6 +1,9 @@
 class Story < ActiveRecord::Base
 
-  attr_accessible :victims
+  attr_accessible :victims, :title, :link, :description, :bias, :offense,
+    :occurred_at
+
+  validates_presence_of :victims, :title, :link, :description, :bias, :offense, :occurred_at
 
   def self.random(bias:nil)
     if bias
@@ -16,4 +19,5 @@ class Story < ActiveRecord::Base
   def victim_list
     victims.split(",").collect{|vicitm|vicitm.strip}
   end
+
 end
