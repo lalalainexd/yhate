@@ -12,6 +12,8 @@ class HateCrime
     self.new.victim_count_with_offense(offense)
   end
 
+  private
+
   def victim_count
     victim_counts = Hatolence::VictimCount.all
 
@@ -30,7 +32,6 @@ class HateCrime
   end
 
 
-  private
 
   def total(victim_counts)
     victim_counts.inject(0) do |sum, victim_count|
