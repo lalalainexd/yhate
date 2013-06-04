@@ -5,9 +5,9 @@ class ApplicationController < ActionController::Base
     @story = Story.random(filters)
 
     if params[:bias]
-      @total_victims = HateCrime.victim_count_filter_by_bias(*params[:bias])
+      @total_victims = HateCrime.victim_count_with_bias(*params[:bias])
     elsif params[:offense]
-      @total_victims = HateCrime.victim_count_filter_by_offense(*params[:offense])
+      @total_victims = HateCrime.victim_count_with_offense(*params[:offense])
     else
       @total_victims = HateCrime.victim_count
     end

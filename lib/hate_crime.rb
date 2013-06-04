@@ -7,12 +7,12 @@ class HateCrime
 
   end
 
-  def self.filter_by_bias(*bias)
+  def self.victim_count_with_bias(*bias)
     victim_counts = Hatolence::VictimCount.filter_by_bias(*bias)
     total(victim_counts)
   end
 
-  def self.filter_by_offense(*offense)
+  def self.victim_count_with_offense(*offense)
     victim_counts = Hatolence::VictimCount.filter_by_offense(*offense)
     total(victim_counts)
   end
