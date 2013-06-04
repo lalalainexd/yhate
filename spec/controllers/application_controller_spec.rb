@@ -15,14 +15,14 @@ describe ApplicationController do
     context "with a filter" do
       it "gets a random story that fits one of the biases and the victim count" do
         Story.should_receive(:random).with(bias:["cat", "dog"])
-        HateCrime.should_receive(:victim_count_filter_by_bias).with("cat", "dog").and_return(2)
+        HateCrime.should_receive(:victim_count_with_bias).with("cat", "dog").and_return(2)
         get :index, bias:["cat", "dog"]
         expect(assigns(:total_victims)).to eq(2)
       end
 
       it "gets a random story that fits one of the offenses" do
         Story.should_receive(:random).with(offense:["person", "property"])
-        HateCrime.should_receive(:victim_count_filter_by_offense).with("person", "property").and_return(1)
+        HateCrime.should_receive(:victim_count_with_offense).with("person", "property").and_return(1)
         get :index, offense:["person", "property"]
         expect(assigns(:total_victims)).to eq(1)
       end
