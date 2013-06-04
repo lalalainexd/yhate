@@ -5,9 +5,13 @@ class Story < ActiveRecord::Base
 
   validates_presence_of :victims, :title, :link, :description, :bias, :offense, :occurred_at
 
-  def self.random(bias:nil)
+  def self.random(bias:nil, offense:nil)
     if bias
       arel = where(bias: bias)
+      offset = rand(arel.count)
+      arel.first(offset: offset)
+    elsif offense
+      arel = where(offense: offense)
       offset = rand(arel.count)
       arel.first(offset: offset)
     else

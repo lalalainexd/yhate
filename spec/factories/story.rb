@@ -6,6 +6,7 @@ FactoryGirl.define do
     link "http://www.example.com"
     title "Poor Kitties"
     bias "cat"
+    offense "thrown"
   end
 
   factory :dog_bias_story, class: "Story" do
@@ -15,6 +16,7 @@ FactoryGirl.define do
     link "http://www.example.com"
     title "Abused puppy"
     bias "dog"
+    offense "smacked"
   end
 
   factory :sheep_bias_story, class: "Story" do
@@ -24,5 +26,6 @@ FactoryGirl.define do
     link "http://www.example.com"
     title "Bah bah naked sheep"
     bias "sheep"
+    offense "sheered"
   end
 end

@@ -4,7 +4,7 @@ describe Story do
 
   describe '.random' do
     it 'returns a random story from the database' do
-      5.times{ Story.create}
+      5.times{ FactoryGirl.create(:cat_bias_story)}
 
       story1 = Story.random
       story2 = Story.random
@@ -34,6 +34,13 @@ describe Story do
         random_story = Story.random(bias: ["cat", "dog"])
 
         expect([story1, story2, story3]).to include(random_story)
+
+      end
+
+      it "returns a random sotry that fits any of the listed offense" do
+        random_story = Story.random(offense: ["sheered", "thrown"])
+
+        expect([story1, story2, story4]).to include(random_story)
 
       end
     end
