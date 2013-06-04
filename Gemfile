@@ -8,6 +8,7 @@ gem 'pg'
 gem 'haml-rails'
 gem 'hatolence'
 gem 'dynamic_form'
+gem 'validate_url'
 
 
 # Gems used only for assets and not required

@@ -5,7 +5,10 @@ class Story < ActiveRecord::Base
 
   validates_presence_of :victims, :title, :link, :description, :bias, :offense, :occurred_at
 
+  validates :link, url: true, allow_nil: false, allow_blank: false
+
   def self.random(bias:nil, offense:nil)
+    #TDOO ew this .... ew..
     if bias
       arel = where(bias: bias)
       offset = rand(arel.count)
@@ -23,5 +26,7 @@ class Story < ActiveRecord::Base
   def victim_list
     victims.split(",").collect{|vicitm|vicitm.strip}
   end
+
+
 
 end

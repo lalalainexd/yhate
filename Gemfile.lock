@@ -134,6 +134,8 @@ GEM
       kgio (~> 2.6)
       rack
       raindrops (~> 0.7)
+    validate_url (0.2.0)
+      activemodel (>= 3.0.0)
 
 PLATFORMS
   ruby
@@ -151,3 +153,4 @@ DEPENDENCIES
   sass-rails (~> 3.2.3)
   uglifier (>= 1.0.3)
   unicorn
+  validate_url

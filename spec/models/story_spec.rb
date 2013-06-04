@@ -53,4 +53,15 @@ describe Story do
     end
   end
 
+  describe "date validation" do
+
+    context "invalid date format" do
+      it "is invalid" do
+        story = FactoryGirl.build(:cat_bias_story)
+        story.occurred_at = "blah"
+        expect(story).to be_invalid
+      end
+    end
+  end
+
 end
