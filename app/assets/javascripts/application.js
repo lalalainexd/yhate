@@ -14,3 +14,4 @@
 //= require azy_theme/jquery.fitvids
 //= require azy_theme/jquery.easing.1.3
 //= require azy_theme/twitter
+//= require azy_theme/custom

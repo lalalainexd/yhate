@@ -36,31 +36,11 @@
                 %li
                   %a{:href => "#features"} Features
                 %li
-                  %a{:href => "#support"} Support
-                %li
-                  %a{:href => "#testimonials"} Testimonials
-                %li
-                  %a{:href => "#news"} News
-                %li
-                  %a{:href => "#contact"} Contact
-                %li
-                  %a{:href => "#signup"} Signup
+                  %a{:href => "#signup"} Add a Story
     / ################ NAVIGATION END ################
     / ################ WRAP START ################
     #wrap
-      / ################ HEADER START ################
-      %header#top
-        .container.home
-          .row
-            .span6
-              %h1 Now this is called a Landing Page
-              %h2 FULL Responsive
-              %p Crystal Clear heading fonts without using any  Google/Web Fonts. Faster Load time and less buggy
-              %p
-                %a.btn.btn-landing.btn-large LEARN MORE
-            .span6
-              stuff goes here
-      / ################ HEADER END ################
+      = yield
       / ################ MAIN CONTAINER START ################
       .container
         / ################ FEATURES SECTION START ################
@@ -104,11 +84,11 @@
               %p
                 Unlock your full potential with a world-class template!
               %a.btn.btn-landing.btn-large GET STARTED TODAY
-          %br/
-          /.alert.alert-danger.span5.offset3
-          /%button.close{"data-dismiss" => "alert", :type => "button"} ×
-          %strong OFFER
-          An easy way to show important offers to your customers.
+        /%br/
+        /.alert.alert-danger.span5.offset3
+        /%button.close{"data-dismiss" => "alert", :type => "button"} ×
+        /%strong OFFER
+        /An easy way to show important offers to your customers.
         / ################ SIGNUP SECTION END ################
         / ################ BOTTOM SECTION START ################
         %section#bottom
@@ -119,8 +99,6 @@
                 Clients around the
                 %i.icon-globe{:style => "font-size: 80px; line-height: 80px;"}
               %img.margintop20{:src => "assets/azy_theme/companies.png", :style => "height:60px"}/
-          %hr.line/
-          %h2.icon-phone.center +1 - CALL - ANY - TIME
         / ################ BOTTOM SECTION END ################
       / ################ PUSH WILL KEEP THE FOOTER AT BOTTOM IF YOU WANT TO CREATE OTHER PAGES ################
       #push

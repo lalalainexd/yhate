@@ -1,37 +1,27 @@
-.row
-  .span3
-    Filter stories:
-    = radio_button_tag 'filter_by', "bias"
-    = radio_button_tag 'filter_by', "offense"
-    = select_tag(:bias_category, options_for_bias_category)
-    = select_tag(:bias, options_for_bias)
-    = select_tag(:offense_category, options_for_offense_category)
-    = select_tag(:offense, options_for_offense)
-    = link_to "Filter Results", root_path
-  .span9
-    - if @story
-      .page-header
-        %h2
+%header#top
+  .container.home
+    .row
+      .span8
+        %h1
           = @story.title
-      = time_tag @story.occurred_at,format: "%B %d, %Y"
-      %ul
-        - @story.victim_list.each do |v|
-          %li
-            = v
-      = @story.description
-
-      %p
-        #{@total_victims} victim counts
-      %p
-        = link_to "Read more about the story", @story.link
-
-      %p
-        = link_to "See another story", root_path(filters)
-    - else
-      %p
-        There are no stories!
-
-    %P
-      = link_to "Add your own story", new_story_path
-
+        %h2
+          = @story.victims
+        %p
+          = @story.description
+        %p.pull-left
+          %a.btn.btn-small.btn-info{href:"#{@story.link}"} Read More
+      .span4
+        stuff goes here
+        Filter stories:
+        = radio_button_tag 'filter_by', "bias"
+        = radio_button_tag 'filter_by', "offense"
+        = select_tag(:bias_category, options_for_bias_category)
+        = select_tag(:bias, options_for_bias)
+        = select_tag(:offense_category, options_for_offense_category)
+        = select_tag(:offense, options_for_offense)
+        = link_to "Filter Results", root_path
+        %p
+          #{@total_victims} victim counts
+        %p
+          = link_to "See another story", root_path(filters)
 
