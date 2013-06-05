@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
 
   def index
     @story = Story.random(filters)
-    @new_story = Story.new
+    @new_story ||= Story.new
 
     if params[:bias]
       @total_victims = HateCrime.victim_count_with_bias(*params[:bias])

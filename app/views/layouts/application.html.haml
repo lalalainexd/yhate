@@ -45,8 +45,6 @@
       = yield
       / ################ MAIN CONTAINER START ################
       .container
-        %section#filter
-          = render partial: "filter2"
         / ################ FEATURES SECTION START ################
         %section#features
           .row.margintop20
@@ -65,11 +63,11 @@
             .span12
               %h2
                 Do you have a story to share?
-          .row-fluid
-            .span8
+              %p
+                If you've experienced or witnessed any hate crimes, we urge you to share your story. Let the world know that hate crimes are not okay!
+          .row
+            .new-story-container.span12
               = render partial: "stories/new", locals: {story: @new_story}
-            .span4
-              If you've experienced or witnessed any hate crimes, please share your story
         / ################ SIGNUP SECTION END ################
     %footer#footer.margintop20
       .container

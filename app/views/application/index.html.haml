@@ -1,15 +1,23 @@
 %header#top
   .container.home
     .row
-      .span8
-        %h1
-          = @story.title
+      %h1.span12
+        = @story.title
+    .row
+      .span5
         %h2
-          = @story.victims
+          The Victims
+        %ul
+          - @story.victim_list.each do |v|
+            %li
+              = v
+      .span7
         %p
           = @story.description
-        %p.pull-left
-          %a.btn.btn-small.btn-info{href:"#{@story.link}"} Read More
+          %a.external{href:"#{@story.link}"} Read More >>
 
-        %p
-          = link_to "See another story", root_path(filters), class: "external"
+    .row.center.margintop20
+      %p
+        There have been #{@total_victims} hate crimes recorded by the FBI since 2006.
+      %p
+        = link_to "See another story", root_path(filters)

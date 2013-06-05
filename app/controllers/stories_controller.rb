@@ -1,15 +1,11 @@
 class StoriesController < ApplicationController
-  def new
-    @story = Story.new
-  end
+  respond_to :json
 
   def create
-    @story = Story.new(params[:story])
+    @new_story = Story.new(params[:story])
 
-    if @story.save
-      redirect_to root_path
-    else
-      render :new
-    end
+    @new_story.save
+
+    respond_with @new_story
   end
 end
