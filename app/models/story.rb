@@ -7,6 +7,9 @@ class Story < ActiveRecord::Base
 
   validates :link, url: true, allow_nil: false, allow_blank: false
 
+  validates :description, length: {maximum: 500}
+  validates :title, length: {maximum: 50}
+
   def self.random(bias:nil, offense:nil)
     #TDOO ew this .... ew..
     if bias
