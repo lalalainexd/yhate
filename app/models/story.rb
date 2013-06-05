@@ -11,19 +11,15 @@ class Story < ActiveRecord::Base
   validates :title, length: {maximum: 50}
 
   def self.random(bias:nil, offense:nil)
-    #TDOO ew this .... ew..
-    if bias
-      arel = where(bias: bias)
-      offset = rand(arel.count)
-      arel.first(offset: offset)
+    arel = if bias
+      where(bias: bias)
     elsif offense
-      arel = where(offense: offense)
-      offset = rand(arel.count)
-      arel.first(offset: offset)
+      where(offense: offense)
     else
-      offset = rand(Story.count)
-      Story.first(offset: offset)
+      scoped
     end
+
+    arel.first(offset: rand(arel.count))
   end
 
   def victim_list
