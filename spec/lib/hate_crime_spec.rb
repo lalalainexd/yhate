@@ -8,21 +8,21 @@ describe HateCrime do
       [
         {
           "total" => 1,
-          "bias" => {
-            "name" => "cat"
-          },
-          "offense" => {
-            "name" => "poked"
-          }
+          #"bias" => {
+            #"name" => "cat"
+          #},
+          #"offense" => {
+            #"name" => "poked"
+          #}
         },
         {
-          "total" => 2,
-          "bias" => {
-            "name" => "cat"
-          },
-          "offense" => {
-            "name" => "dropped"
-          }
+          "total" => 2
+          #"bias" => {
+            #"name" => "cat"
+          #},
+          #"offense" => {
+            #"name" => "dropped"
+          #}
         }
       ]
     end

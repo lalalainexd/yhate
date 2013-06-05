@@ -4,15 +4,14 @@ describe Story do
 
   describe '.random' do
     it 'returns a random story from the database' do
-      5.times{ FactoryGirl.create(:cat_bias_story)}
+      stories = []
+      5.times{ stories << FactoryGirl.create(:cat_bias_story)}
 
-      story1 = Story.random
-      story2 = Story.random
-      story3 = Story.random
+      Story.should_receive(:rand).and_return(3)
 
-      not_equal = story1 != story2 || story1 != story3 || story2 != story3
+      story = Story.random
 
-      expect(not_equal).to be_true
+      expect(story).to eq stories[3]
 
     end
 
