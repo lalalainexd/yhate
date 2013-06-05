@@ -11,5 +11,6 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery
-//= require jquery_ujs
-//= require twitter/bootstrap
+//= require azy_theme/jquery.fitvids
+//= require azy_theme/jquery.easing.1.3
+//= require azy_theme/twitter
