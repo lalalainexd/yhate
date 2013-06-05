@@ -1,0 +1,9 @@
+form {
+  margin: 0 0 100px;
+}
+
+label.control-label[for*="story_"] {
+  padding-right: 10px;
+  font-size: 18px;
+
+}

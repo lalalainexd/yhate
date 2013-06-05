@@ -9,10 +9,8 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- *= require_tree .
+ *= require_tree ./azy_theme
+ *= require custom
  */
 
-label.control-label[for*="story_"] {
-  padding-right: 10px;
 
-}

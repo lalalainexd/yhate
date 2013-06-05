@@ -46,17 +46,7 @@
       / ################ MAIN CONTAINER START ################
       .container
         %section#filter
-          stuff goes here
-          Filter stories:
-          = radio_button_tag 'filter_by', "bias"
-          = radio_button_tag 'filter_by', "offense"
-          = select_tag(:bias_category, options_for_bias_category)
-          = select_tag(:bias, options_for_bias)
-          = select_tag(:offense_category, options_for_offense_category)
-          = select_tag(:offense, options_for_offense)
-          = link_to "Filter Results", root_path
-          %p
-            #{@total_victims} victim counts
+          = render partial: "filter"
         / ################ FEATURES SECTION START ################
         %section#features
           .row.margintop20
