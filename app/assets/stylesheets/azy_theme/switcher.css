@@ -16,14 +16,14 @@
     left:0;
     z-index:9999;
     top: 10%;
-    
+
     margin-top:0px;
     padding-left:10px;
     padding-right:10px;
 }
 
 #style-switcher div {
-   
+
     margin-bottom: 5px;
 }
 
@@ -36,7 +36,7 @@
     font-size: 14px;
     line-height: 15px;
     letter-spacing: 0;
-    
+
 }
 
 #style-switcher h6 a {
@@ -53,7 +53,7 @@ line-height: 32px;
     color: #000;
     padding: 0;
     text-decoration: none;
- 
+
   -moz-border-top-right-radius:3px;
 	border-top-right-radius:3px;
 	-moz-border-bottom-right-radius:3px;
@@ -65,7 +65,7 @@ line-height: 32px;
 .colors li {  margin:2px; float:left;}
 .colors li a { display: block; width:25px; height:25px; cursor: pointer;
                border: 1px solid #333;
-} 
+}
 
 .layout-style select {
     width: 100%;

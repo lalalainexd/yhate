@@ -266,7 +266,7 @@ a.post-entry:hover {
     z-index: 40;
     display: none;
     background-color: #d9d9d9;
-    background: rgba(277, 277, 277, 0.7);
+    background: rgba(255, 255, 255, 0.7);
     background-repeat: no-repeat;
     background-position: 50%;
     cursor: pointer;
