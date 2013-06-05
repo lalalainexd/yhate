@@ -11,7 +11,7 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery
-//= require azy_theme/jquery.fitvids
-//= require azy_theme/jquery.easing.1.3
+//= require azy_theme/jquery.easing
 //= require azy_theme/twitter
 //= require azy_theme/custom
+//= require tabby

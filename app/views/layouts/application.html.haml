@@ -16,7 +16,9 @@
     = stylesheet_link_tag    "application"
     = javascript_include_tag "application"
     = csrf_meta_tags
-    = yield :head
+    = stylesheet_link_tag "http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css"
+    = javascript_include_tag "http://code.jquery.com/ui/1.10.3/jquery-ui.js"
+    = javascript_include_tag "datepicker.js"
   %body
     / ################ NAVIGATION START ################
     .navbar-wrapper
@@ -43,35 +45,28 @@
       = yield
       / ################ MAIN CONTAINER START ################
       .container
+        %section#filter
+          stuff goes here
+          Filter stories:
+          = radio_button_tag 'filter_by', "bias"
+          = radio_button_tag 'filter_by', "offense"
+          = select_tag(:bias_category, options_for_bias_category)
+          = select_tag(:bias, options_for_bias)
+          = select_tag(:offense_category, options_for_offense_category)
+          = select_tag(:offense, options_for_offense)
+          = link_to "Filter Results", root_path
+          %p
+            #{@total_victims} victim counts
         / ################ FEATURES SECTION START ################
         %section#features
-          .row
+          .row.margintop20
             .span6
-              %h1 Your favorite marketing slogan comes here...
+              %h1 Stop the Hate
               %p Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nam cursus. Morbi ut mi. Nullam enim leo, egestas id, condimentum at, laoreet mattis, massa. Sed eleifend nonummy diam. Praesent mauris ante, elementum et, bibendum at, posuere sit amet, nibh. Duis tincidunt lectus quis dui viverra vestibulum. Suspendisse vulputate aliquam dui.
               %p
                 Nulla elementum dui ut augue. Aliquam vehicula mi at mauris. Maecenas placerat, nisl at consequat rhoncus, sem nunc gravida justo, quis eleifend arcu velit quis lacus. Morbi magna magna, tincidunt a, mattis non, imperdiet vitae, tellus. Sed odio est, auctor ac, sollicitudin in, consequat vitae, orci. Fusce id felis. Vivamus sollicitudin metus eget eros.
             .span6
-              %img{:src => "assets/azy_theme/person.png"}/
-          .row.margintop20
-            .span4
-              %h2
-                %i.icon-briefcase
-                1st Feature
-              %p Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nam cursus. Morbi ut mi. Nullam enim leo, egestas id, condimentum at, laoreet mattis, massa. Sed eleifend nonummy diam. Praesent mauris ante, elementum et, bibendum at, posuere sit amet, nibh.
-            / /span4
-            .span4
-              %h2
-                %i.icon-bullhorn
-                2nd Feature
-              %p Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nam cursus. Morbi ut mi. Nullam enim leo, egestas id, condimentum at, laoreet mattis, massa. Sed eleifend nonummy diam. Praesent mauris ante, elementum et, bibendum at, posuere sit amet, nibh.
-            / /span4
-            .span4
-              %h2
-                %i.icon-bar-chart
-                3rd Feature
-              %p Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nam cursus. Morbi ut mi. Nullam enim leo, egestas id, condimentum at, laoreet mattis, massa. Sed eleifend nonummy diam. Praesent mauris ante, elementum et, bibendum at, posuere sit amet, nibh.
-            / /span4
+              #hate_graph
         / ################ FEATURES SECTION END ################
         %hr.line/
         / ################ SIGNUP SECTION START ################
@@ -80,59 +75,23 @@
             .span12
               %h2
                 Do you have a story to share?
-                %i.icon-hand-right
-              %p
-                Unlock your full potential with a world-class template!
-              %a.btn.btn-landing.btn-large GET STARTED TODAY
-        /%br/
-        /.alert.alert-danger.span5.offset3
-        /%button.close{"data-dismiss" => "alert", :type => "button"} ×
-        /%strong OFFER
-        /An easy way to show important offers to your customers.
+          .row-fluid
+            .span8
+              = render partial: "stories/new", locals: {story: @new_story}
+            .span4
+              If you've experienced or witnessed any hate crimes, please share your story
         / ################ SIGNUP SECTION END ################
-        / ################ BOTTOM SECTION START ################
-        %section#bottom
-          %hr.line/
-          .row.center
-            .span12
-              %h2
-                Clients around the
-                %i.icon-globe{:style => "font-size: 80px; line-height: 80px;"}
-              %img.margintop20{:src => "assets/azy_theme/companies.png", :style => "height:60px"}/
-        / ################ BOTTOM SECTION END ################
-      / ################ PUSH WILL KEEP THE FOOTER AT BOTTOM IF YOU WANT TO CREATE OTHER PAGES ################
-      #push
-    / ################ FOOTER START ################
     %footer#footer.margintop20
       .container
         .row
           .span4
-            %h2 How you can help
-            %img{:src => "assets/azy_theme/logo-dark.png"}/
-    /        %p Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nam cursus. Morbi ut mi. Nullam enim leo, egestas id, condimentum at, laoreet mattis, massa. Sed eleifend nonummy diam.
-    /        %p.copyright
-    /          © 2012 Azy Inc.
-    /      .span2
-    /        %h2 links
-    /        %ul.unstyled.margintop20
-    /          %li About Us
-    /          %li Blog
-    /          %li History
-    /          %li Jobs
-    /      .span3
-    /        %h2 subscribe
-    /        .input-append.margintop20
-    /          %input#appendedInputButton.span2{:placeholder => "Enter your email id..", :type => "text"}/
-    /          %button.btn{:type => "button"} Go!
-    /        %ul.inline.social.margintop20
-    /          %li
-    /            %i.icon-facebook
-    /          %li
-    /            %i.icon-twitter
-    /          %li
-    /            %i.icon-linkedin
-    /      .span3
-    /        %h2
-    /          tweets
-    /          %i.icon-twitter
-    /        %ul#twitter.margintop20
+            %h3 Related Resources
+            %ul
+              %li
+                %a{href:"http://www.fbi.gov/about-us/cjis/ucr/hate-crime"}FBI Uniform Crime Reports
+              %li
+                %a{href:"http://www.nohatespeechmovement.org/"}No Hate Speech Movement
+          .span6
+            %h3 About yHate
+            %p
+              Nulla elementum dui ut augue. Aliquam vehicula mi at mauris. Maecenas placerat, nisl at consequat rhoncus, sem nunc gravida justo, quis eleifend arcu velit quis lacus. Morbi magna magna, tincidunt a, mattis non, imperdiet vitae, tellus. Sed odio est, auctor ac, sollicitudin in, consequat vitae, orci. Fusce id felis. Vivamus sollicitudin metus eget eros.

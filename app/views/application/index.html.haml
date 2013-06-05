@@ -10,18 +10,6 @@
           = @story.description
         %p.pull-left
           %a.btn.btn-small.btn-info{href:"#{@story.link}"} Read More
-      .span4
-        stuff goes here
-        Filter stories:
-        = radio_button_tag 'filter_by', "bias"
-        = radio_button_tag 'filter_by', "offense"
-        = select_tag(:bias_category, options_for_bias_category)
-        = select_tag(:bias, options_for_bias)
-        = select_tag(:offense_category, options_for_offense_category)
-        = select_tag(:offense, options_for_offense)
-        = link_to "Filter Results", root_path
-        %p
-          #{@total_victims} victim counts
-        %p
-          = link_to "See another story", root_path(filters)
 
+        %p
+          = link_to "See another story", root_path(filters), class: "external"

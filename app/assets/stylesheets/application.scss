@@ -11,3 +11,8 @@
  *= require_self
  *= require_tree .
  */
+
+label.control-label[for*="story_"] {
+  padding-right: 10px;
+
+}
