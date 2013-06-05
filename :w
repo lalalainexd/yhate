@@ -1,9 +1,5 @@
 $(document).ready( function() {
 
-});
-
-$(document).ready( function() {
-
   $('.category-filter').hide();
   $('.bias-offense-filter').hide();
 
@@ -13,9 +9,9 @@ $(document).ready( function() {
     $('.bias-offense-filter').hide();
 
     if(radioValue == "all") {
-      $('.category-filter').hide();
+      $('.category-filter').blind();
     } else {
-      $('.category-filter').show();
+      $('.category-filter').show('slide');
 
       if(radioValue == "offense"){
         $('.bias-categories').hide();
@@ -29,13 +25,6 @@ $(document).ready( function() {
     console.log(radioValue);
 
   });
-
-  $('.bias-categories').change(function() {
-    if(radioValue == "all") {
-
-    }
-
-  })
 
   $('a#filter-submit').click(function() {
     console.log("hello");
