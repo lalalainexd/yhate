@@ -1,24 +1,30 @@
 %header#top
   .container.home
     .row
-      %h1.span12
-        = @story.title
-    .row
-      .span5
-        %h2
-          The Victims
-        %ul
-          - @story.victim_list.each do |v|
-            %li
-              = v
-      .span7
-        %p
-          = @story.description
-          %br
-          %a.external{href:"#{@story.link}"} Read More >>
+      - if @story
+        %h1.span12
+          = @story.title
+        .row
+          .span5
+            %h2
+              The Victims
+            %ul
+              - @story.victim_list.each do |v|
+                %li
+                  = v
+          .span7
+            %p
+              = @story.description
+              %br
+              %a.external{href:"#{@story.link}"} Read More >>
 
-    .row.center.margintop20
-      %p
-        There have been #{@total_victims} hate crimes recorded by the FBI since 2006.
-      %p
-        = link_to "Read another story", root_path(filters), class: "btn btn-large btn-primary"
+        .row.center.margintop20
+          %p
+            There have been #{@total_victims} hate crimes recorded by the FBI since 2006.
+          %p
+            = link_to "Read another story", root_path(filters), class: "btn btn-large btn-primary"
+      - else
+        %h1
+          There are no stories!
+        %h2
+          But there's still crime. :(

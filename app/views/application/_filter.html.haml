@@ -1,45 +1,23 @@
-%form.row#form-filter
-
-  .category-selection.span3
-    %h3
-      Filter the Stories By:
-    =label_tag 'filter_by_bias', nil, class: 'radio' do
-      = radio_button_tag 'filter_by', "bias", class: "controls"
-      Bias
-
-    =label_tag 'filter_by_offense', nil, class: 'radio' do
-      = radio_button_tag 'filter_by', "offense", class: "controls"
-      Offense
-
-    =label_tag 'filter_by_all', nil, class: 'radio' do
-      = radio_button_tag 'filter_by', "all", class: "controls", checked: "checked"
-      No Filter
-
-  .span3.category-filter
-    %h3
-      Select a Category:
-    .bias-categories.control-group
-      =label_tag 'Types of Biases', nil, class: 'control-label'
-      = select_tag(:bias_category, options_for_bias_category)
-
-    .offense-categories
-      =label_tag 'Types of Offenses', nil, class: 'control-label'
-      = select_tag(:offense_category, options_for_offense_category)
-
-  .span3.bias-offense-filter
-    .biases
+%h2.center Filter Stories
+.row.filter-nav
+  %ul.nav.nav-list.span3
+    %li
       %h3
-        Select a Bias:
-      =label_tag 'Biases', nil, class: 'control-label'
-      = select_tag(:bias, options_for_bias)
+        =link_to "No Filter", root_path
+  %ul.nav.nav-list.span3
+    %li
+      %h3 Biases
+    %li
+      =link_to "All", root_path
+    - all_biases.each do |b|
+      %li
+        =link_to b, bias_link(b)
 
-    .offenses
-      %h3
-        Select an Offense:
-      =label_tag 'Offenses', nil, class: 'control-label'
-      = select_tag(:offense, options_for_offense)
-
-  .span3
-    = link_to "Filter Results", root_path, id: "filter-submit", class: "btn btn-large btn-primary"
-    %p
-      #{@total_victims} victim counts
+  %ul.nav.nav-list.span3
+    %li
+      %h3 Offenses
+    %li
+      =link_to "All", root_path
+    - all_offenses.each do |b|
+      %li
+        =link_to b, offense_link(b)

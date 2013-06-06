@@ -8,6 +8,25 @@ label.control-label[for*="story_"] {
 
 }
 
-a#filter-submit {
-  margin-top: 40px;
+#toggleFilter {
+  position: absolute;
+  left: 50%;
+  bottom: -10px;
+  display: inline;
+  padding: 5px;
+
+}
+
+.container.home {
+  margin-bottom: 0;
+}
+
+section#filter-wrap {
+  color: #000;
+  background: #AAA;
+  padding-bottom: 50px;
+}
+
+section#filter-wrap li a {
+  color: #000;
 }

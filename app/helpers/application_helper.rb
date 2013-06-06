@@ -24,4 +24,20 @@ module ApplicationHelper
     {bias: params[:bias],offense: params[:offense]}
   end
 
+  def all_biases
+    HateCrime.biases
+  end
+
+  def all_offenses
+    HateCrime.offenses
+  end
+
+  def bias_link(*bias)
+    root_path(bias: bias)
+  end
+
+  def offense_link(*offense)
+    root_path(offense: offense)
+  end
+
 end

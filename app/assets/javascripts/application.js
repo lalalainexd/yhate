@@ -14,8 +14,6 @@
 //= require jquery_ujs
 //= require azy_theme/jquery.easing
 //= require azy_theme/twitter
-//= require azy_theme/custom
 //= require tabby
 //= require story_filter
 //= require new_story_submit
-//= require hate_graph
