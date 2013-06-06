@@ -10,6 +10,7 @@ gem 'hatolence'
 gem 'dynamic_form'
 gem 'validate_url'
 gem 'redis-rails'
+gem 'chronic'
 
 
 # Gems used only for assets and not required
