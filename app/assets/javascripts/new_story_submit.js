@@ -2,6 +2,7 @@ $(document).ready(function() {
   $('#new_story').on('ajax:success', function(event, xhr, status) {
       var $form = $(this);
       var $share = $('#share');
+      $share.find('.form-errors').remove();
       $share.find('.row').last().html("<h3 class='center'>Thank you for sharing your story with us!</h3>");
 
   })
