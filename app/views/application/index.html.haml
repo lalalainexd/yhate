@@ -20,11 +20,11 @@
 
         .row.center.margintop20
           %p
-            There have been #{@total_victims} hate crimes recorded by the FBI since 2006.
+            There were #{@total_victims} similar hate crimes recorded by the FBI in 2010.
           %p
             = link_to "Read another story", root_path(filters), class: "btn btn-large btn-primary"
       - else
         %h1
           There are no stories!
         %h2
-          But there's still crime. :(
+          But there were at least #{@total_victims} hate crimes in 2010. :(
