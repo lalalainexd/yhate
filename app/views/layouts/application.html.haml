@@ -8,11 +8,8 @@
   / <![endif]
   %head
     %meta{:charset => "utf-8"}/
-    / Uncomment to make IE8 render like IE7
-    / <meta http-equiv="X-UA-Compatible" content="IE=7" />
-    / Set the viewport width to device width for mobile
     %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
-    %title= content_for?(:title) ? yield(:title) : "Untitled"
+    %title= content_for?(:title) ? yield(:title) : "Yhate"
     = stylesheet_link_tag    "application"
     = javascript_include_tag "application"
     = csrf_meta_tags
@@ -44,9 +41,12 @@
     #wrap
       = yield
       / ################ MAIN CONTAINER START ################
-      .container
-        %section#filter
+      %section#filter-wrap
+        .container#filter
           = render partial: "filter2"
+        #toggleFilter.btn.btn-mini.btn-info
+
+      .container
         / ################ FEATURES SECTION START ################
         %section#features
           .row.margintop20

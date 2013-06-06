@@ -1,6 +1,21 @@
-$(document).ready( function() {
+$(document).ready(function(){
+  toggleArchives();
+  if ($("#filter").is(':visible')) {
+    $("#toggleFilter").html("Filters");
+  }
+  $("#toggleFilter").on("click",toggleArchives);
 
 });
+
+var toggleArchives = function() {
+  if ($("#filter").is(':visible')) {
+    $("#filter").slideUp();
+  }
+  else {
+    $("#toggleFilters").html("Filters");
+    $("#filter").slideDown();
+  }
+}
 
 $(document).ready( function() {
 

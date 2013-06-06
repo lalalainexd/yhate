@@ -11,8 +11,8 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery
+//= require jquery_ujs
 //= require azy_theme/jquery.easing
 //= require azy_theme/twitter
-//= require azy_theme/custom
 //= require tabby
 //= require story_filter

@@ -1,15 +1,8 @@
-    /*----------------------------------------------------*/
-    /*	Image Overlay
+/*----------------------------------------------------*/
+/*	Image Overlay
 /*----------------------------------------------------*/
 
 $(document).ready(function () {
-    $('.picture a').hover(function () {
-        $(this).find('.image-overlay-zoom, .image-overlay-link').stop().fadeTo('fast', 1);
-    },function () {
-        $(this).find('.image-overlay-zoom, .image-overlay-link').stop().fadeTo('fast', 0);
-    });
-
-
   // scroll to anchor
   $("a[href^='#top']").click(function(event){
       event.preventDefault();
