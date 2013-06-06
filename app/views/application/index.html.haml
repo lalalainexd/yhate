@@ -2,14 +2,21 @@
   .container.home
     .row
       .span8
-        %h1
-          = @story.title
-        %h2
-          = @story.victims
-        %p
-          = @story.description
-        %p.pull-left
-          %a.btn.btn-small.btn-info{href:"#{@story.link}"} Read More
+        - if @story
 
-        %p
-          = link_to "See another story", root_path(filters), class: "external"
+          %h1
+            = @story.title
+          %h2
+            = @story.victims
+          %p
+            = @story.description
+          %p.pull-left
+            %a.btn.btn-small.btn-info{href:"#{@story.link}"} Read More
+
+          %p
+            = link_to "See another story", root_path(filters), class: "external"
+        - else
+          %h1
+            There are no stories!
+          %h2
+            But there's still crime. :(

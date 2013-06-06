@@ -22,8 +22,13 @@ label.control-label[for*="story_"] {
 }
 
 section#filter-wrap {
+  color: #000;
   background: #AAA;
   padding-bottom: 50px;
+}
+
+section#filter-wrap li a {
+  color: #000;
 }
 
 .filter-nav {

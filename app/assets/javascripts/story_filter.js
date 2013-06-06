@@ -1,5 +1,5 @@
 $(document).ready(function(){
-  toggleArchives();
+    $("#filter").slideUp();
   if ($("#filter").is(':visible')) {
     $("#toggleFilter").html("Filters");
   }
